@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/blog.astro
 title: Avoid using undocumented APIs
 tag: Today I learned
 date: 2020-05-14

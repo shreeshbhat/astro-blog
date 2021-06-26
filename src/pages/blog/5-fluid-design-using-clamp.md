@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/blog.astro
 title: Fluid design using clamp
 tag: Today I learned, CSS
 date: 2020-05-20

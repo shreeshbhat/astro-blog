@@ -1,8 +1,8 @@
 ---
 export interface Props {
-  post: any;
+  blog: any;
 }
-const { post } = Astro.props;
+const { blog } = Astro.props;
 
 function formatDate(date) {
   return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
@@ -10,7 +10,7 @@ function formatDate(date) {
 ---
 
 <style lang="scss">
-.post {
+.blog {
   padding-top: 6rem;
   padding-bottom: 6rem;
   border-bottom: 1px solid rgba(black, 0.25);
@@ -47,14 +47,14 @@ time {
 }
 </style>
 
-<article class="post">
+<article class="blog">
 
   <div class="data">
-    <h2>{post.title}</h2>
-    <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
+    <h2>{blog.title}</h2>
+    <time class="date" datetime={blog.date}>{formatDate(blog.date)}</time>
     <p class="description">
-      {post.description}
-      <a class="link" href={post.url} aria-label={`Read ${post.title}`}>Read</a>
+      {blog.description}
+      <a class="link" href={blog.url} aria-label={`Read ${blog.title}`}>Read</a>
     </p>
   </div>
 </article>

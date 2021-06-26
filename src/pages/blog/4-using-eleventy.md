@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/blog.astro
 title: Using Eleventy
 tag: Blog
 date: 2020-05-19

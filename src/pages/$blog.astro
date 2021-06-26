@@ -13,15 +13,15 @@ let canonicalURL = Astro.request.canonicalURL;
 let { collection } = Astro.props;
 export async function createCollection() {
   return {
-    /** Load posts, sort newest -> oldest */
+    /** Load blog posts, sort newest -> oldest */
     async data() {
-      let allPosts = Astro.fetchContent('./post/*.md');
+      let allPosts = Astro.fetchContent('./blog/*.md');
       allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
       return allPosts;
     },
     /** Set page size */
     pageSize: 3,
-    /** Generate RSS feed (only for main /posts/ feed) */
+    /** Generate RSS feed (only for main /blog/ feed) */
     rss: {
       title: `Shreesh's Blog`,
       description: 'Some words written by Shreesh Bhat about dev, art, and more.',
@@ -72,7 +72,7 @@ export async function createCollection() {
     <main class="wrapper">
       <h2 class="title">All Posts</h2>
       <small class="count">{collection.start + 1}–{collection.end + 1} of {collection.total}</small>
-      {collection.data.map((post) => <PostPreview post={post} />)}
+      {collection.data.map((blogpost) => <PostPreview blog={blogpost} />)}
     </main>
 
     <footer>

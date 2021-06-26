@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/post.astro
+layout: ../../layouts/blog.astro
 title: Starting out with Hylia kit
 tag: Blog
 date: 2019-08-15
