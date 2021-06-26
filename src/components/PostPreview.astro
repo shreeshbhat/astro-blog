@@ -1,9 +1,8 @@
 ---
 export interface Props {
   post: any;
-  author: string;
 }
-const { post, author } = Astro.props;
+const { post } = Astro.props;
 
 function formatDate(date) {
   return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
@@ -16,10 +15,6 @@ function formatDate(date) {
   padding-bottom: 6rem;
   border-bottom: 1px solid rgba(black, 0.25);
   text-align: center;
-}
-
-.author {
-  text-transform: uppercase;
 }
 
 .date {
@@ -56,7 +51,6 @@ time {
 
   <div class="data">
     <h2>{post.title}</h2>
-    <a class="author" href={`/author/${post.author}`}>{author.name}</a>
     <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
     <p class="description">
       {post.description}

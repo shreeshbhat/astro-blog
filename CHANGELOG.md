@@ -1,4 +1,4 @@
-# @astrojs/example-blog
+# @shreeshbhat/astro-blog
 
 ## 0.0.2
 

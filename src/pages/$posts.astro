@@ -10,7 +10,6 @@ let description = 'An example blog on Astro';
 let canonicalURL = Astro.request.canonicalURL;
 
 // collection
-import authorData from '../data/authors.json';
 let { collection } = Astro.props;
 export async function createCollection() {
   return {
@@ -21,11 +20,11 @@ export async function createCollection() {
       return allPosts;
     },
     /** Set page size */
-    pageSize: 2,
+    pageSize: 3,
     /** Generate RSS feed (only for main /posts/ feed) */
     rss: {
       title: `Shreesh's Blog`,
-      description: 'An example blog on Astro',
+      description: 'Some words written by Shreesh Bhat about dev, art, and more.',
       customData: `<language>en-us</language>`,
       item: (item) => ({
         title: item.title,
@@ -73,7 +72,7 @@ export async function createCollection() {
     <main class="wrapper">
       <h2 class="title">All Posts</h2>
       <small class="count">{collection.start + 1}–{collection.end + 1} of {collection.total}</small>
-      {collection.data.map((post) => <PostPreview post={post} author={authorData[post.author]} />)}
+      {collection.data.map((post) => <PostPreview post={post} />)}
     </main>
 
     <footer>

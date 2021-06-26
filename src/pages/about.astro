@@ -43,21 +43,51 @@ let title = "About";
         margin-bottom: 0;
         text-align: center;
       }
+      .splash-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        width: var(--content-width);
+        max-width: 100%;
+        position: relative;
+      }
     </style>
   </head>
   <body>
     <Nav title={title} />
-
     <main class="wrapper">
       <h2 class="title">{title}</h2>
-      <div class="hero">
-        <img class="hero-img" src="/images/chapter-01.jpg" alt="">
+      <div class="splash-wrapper">
+        <div class="hero">
+          <img class="hero-img" src="/images/profile.svg" alt="">
+        </div>
+        <div class="text">
+          <p>
+            Hi, I'm Shreesh Bhat, a Senior Software Engineer at Manhattan
+            Associates, where I love building User Interfaces and framework to
+            generate UIs.
+          </p>
+        </div>
       </div>
       <div class="text">
-        <p>The book cover and spine above and the images which follow were not part of the original Ormsby translation—they are taken from the 1880 edition of J. W. Clark, illustrated by Gustave Doré. Clark in his edition states that, “The English text of ‘Don Quixote’ adopted in this edition is that of Jarvis, with occasional corrections from Motteaux.”</p>
-        <p>See in the introduction below John Ormsby’s critique of both the Jarvis and Motteaux translations. It has been elected in the present Project Gutenberg edition to attach the famous engravings of Gustave Doré to the Ormsby translation instead of the Jarvis/Motteaux. The detail of many of the Doré engravings can be fully appreciated only by utilizing the “Full Size” button to expand them to their original dimensions. Ormsby in his Preface has criticized the fanciful nature of Doré’s illustrations; others feel these woodcuts and steel engravings well match Quixote’s dreams.</p>
+        <br />
+        <p>
+          My pronouns are they/their.
+          I care about performance, inclusive design, and compassionate coding.
+        </p>
+        <p>
+          In my spare time, you will often find me playing video games, cooking,
+          listening to music, table top gaming with my partner, or working on{" "}
+          <a href="https://github.com/shreeshbhat/strike-off">Strike off</a>.
+        </p>
+        <p>
+          You can check out my 
+          <a href="https://github.com/shreeshbhat">GitHub</a> or reach out to me
+          on <a href="https://www.twitter.com/shreeshbhat">Twitter</a>.
+        </p>
       </div>
     </main>
-
   </body>
 </html>
