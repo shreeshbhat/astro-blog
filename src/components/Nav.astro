@@ -1,5 +1,8 @@
 ---
-export let title;
+export interface Props {
+  title: string;
+}
+const { title } = Astro.props;
 ---
 
 <style lang="scss">
@@ -49,12 +52,10 @@ a {
 </style>
 
 <nav class="header">
-  <h1 class="title">Don’s Blog</h1>
+  <h1 class="title">Shreesh's Blog</h1>
   <ul class="nav">
     <li><a href="/">Home</a></li>
     <li><a href="/posts">All Posts</a></li>
-    <li><a href="/author/don">Author: Don</a></li>
-    <li><a href="/author/sancho">Author: Sancho</a></li>
     <li><a href="/about">About</a></li>
   </ul>
 </nav>
