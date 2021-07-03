@@ -12,10 +12,11 @@ const { content } = Astro.props;
     <MainHead title={content.title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
     <style lang="scss">
       .title {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-        font-size: 3em;
+        margin: 0;
+        font-size: var(--h2-text-size);
         letter-spacing: -0.04em;
+        padding-top: 2rem;
+        padding-bottom: 0;
         text-align: center;
       }
 

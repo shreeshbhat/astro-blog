@@ -1,6 +1,58 @@
-body {
-  font-family: 'Spectral', serif;
+:root {
+  --goldenyellow: #fedb8b;
+  --white: #fff;
+  --slate: #262727;
+  --grey-blue: #73849a;
+  --light-grey: #e0e0e0;
+  --light-blue: #8bb8df;
+  --dark-blue: #2b2f33;
+  --dark-pink: #99003b;
+  --dark-green: #2d494e;
+  --light-green: #25b182;
+
+  --button-shadow: 0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);
+  --button-shadow-hover: 0 4px 6px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.08);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --body-bg-color: var(--slate);
+  --item-bg-color: var(--dark-blue);
+  --h1-text-size: clamp(1.4rem, 3vw, 2.4rem);
+  --h2-text-size: clamp(1.2rem, calc(0.5rem + 2vw), 2rem);
+  --h3-text-size: clamp(1rem, calc(0.5rem + 1.5vw), 2rem);
+  --p-text-size: clamp(1rem, 0.5rem + 1vw, 1.6rem);
+  --code-text-size: clamp(1rem, 0.5rem + 1vw, 1.4rem);
+  --desc-text-size: clamp(0.8rem, 0.5rem + 1vw, 1rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  font-family: 
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  width: 100%;
+  min-height: 100%;
   line-height: 1.4;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-padding-top: 80px;
+}
+
+html {
+  // background-color: var(--body-bg-color);
+  background-image: linear-gradient(310deg, hsl(235deg 50% 34%) 0%, hsl(235deg 30% 40%) 30%, hsl(283deg 30% 35%) 60%, hsl(275deg 30% 25%) 90%);
 }
 
 p {
@@ -8,7 +60,24 @@ p {
 }
 
 a {
-  color: crimson;
+  outline: none;
+  outline-offset: 0;
+  padding: 5px 5px 3px 5px;
+  margin: 0;
+  border-bottom: 2px solid currentColor;
+  color: var(--goldenyellow);
+  font-weight: 600;
+  text-decoration: none;
+}
+a:visited {
+  color: var(--goldenyellow);
+}
+a:hover, a:focus {
+  outline-offset: 0;
+  outline: double 5px #e4b067;
+  color: #1f190a;
+  background-color: #e4b067;
+  border-bottom-color: transparent;
 }
 
 img {
@@ -22,4 +91,14 @@ img {
   margin-right: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+::selection {
+  color: black;
+  background: var(--light-blue);
+}
+
+::-moz-selection {
+  color: black;
+  background: var(--light-blue);
 }

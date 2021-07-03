@@ -5,7 +5,7 @@ import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
 
 // page
-let title = `Shreesh's Blog`;
+let title = `Shreesh`;
 let description = 'An example blog on Astro';
 
 // collection
@@ -14,7 +14,7 @@ let description = 'An example blog on Astro';
 
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-let firstPage = allPosts.slice(0, 2);
+let firstPage = allPosts.slice(0, 3);
 ---
 
 <html>

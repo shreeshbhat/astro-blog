@@ -11,44 +11,38 @@ let title = "About";
       canonicalURL={Astro.request.canonicalURL}
     />
     <style lang="scss">
-
-      .text {
-        padding-bottom: 6rem;
-
-        p {
-          font-size: 1.2em;
-          line-height: 2;
-          margin-top: 2em;
-          margin-bottom: 2em;
-        }
+      .wrapper {
+        min-height: calc(100vh - 107px);
+        margin: 0 auto;
+        max-width: min(60ch + 15vw, 830px);
       }
+      .text-wrapper {
+        padding: 35px 40px;
+        margin-top: 30px;
+        margin-bottom: 80px;
 
-      .hero {
-        display: block;
-        height: 16rem;
-        overflow: hidden;
-        margin: 4rem 0;
+        background-color: var(--item-bg-color);
+        border-radius: 4px;
+        box-shadow: var(--button-shadow);
 
-        &-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+        color: var(--light-grey);
+        font-size: var(--p-text-size);
+        line-height: 2;
       }
-
       .title {
-        font-size: 3em;
+        margin: 0;
+        font-size: var(--h2-text-size);
         letter-spacing: -0.04em;
-        margin-top: 2rem;
-        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 0;
         text-align: center;
+        color: var(--light-blue);
       }
       .splash-wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background: white;
         width: var(--content-width);
         max-width: 100%;
         position: relative;
@@ -59,20 +53,12 @@ let title = "About";
     <Nav title={title} />
     <main class="wrapper">
       <h2 class="title">{title}</h2>
-      <div class="splash-wrapper">
-        <div class="hero">
-          <img class="hero-img" src="/images/profile.svg" alt="">
-        </div>
-        <div class="text">
-          <p>
-            Hi, I'm Shreesh Bhat, a Senior Software Engineer at Manhattan
-            Associates, where I love building User Interfaces and framework to
-            generate UIs.
-          </p>
-        </div>
-      </div>
-      <div class="text">
-        <br />
+      <div class="text-wrapper">
+        <p>
+          Hi, I'm Shreesh Bhat, a Senior Software Engineer at Manhattan
+          Associates, where I love building User Interfaces and framework to
+          generate UIs.
+        </p>
         <p>
           My pronouns are they/their.
           I care about performance, inclusive design, and compassionate coding.

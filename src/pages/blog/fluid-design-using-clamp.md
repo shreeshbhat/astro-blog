@@ -1,13 +1,14 @@
 ---
 layout: ../../layouts/blog.astro
 title: Fluid design using clamp
-tag: Today I learned, CSS
+tag:
+  - Today I learned
+  - CSS
 date: 2020-05-20
 image: /images/chapter-03.jpg
 description: Font size fluidity based on browser size and user preference is exciting.
 ---
 I came across css clamp function today while browsing [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
-<!--more-->
 ``` css
 :root {
   font-size: clamp(1rem, 0.5rem + 1vw, 3rem);
