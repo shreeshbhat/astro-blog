@@ -1,6 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
+import BlogHead from '../components/BlogHead.astro';
 
 const { content } = Astro.props;
 
@@ -11,18 +12,24 @@ const { content } = Astro.props;
     <title>{content.title}</title>
     <MainHead title={content.title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
     <style lang="scss">
+      .blog-wrapper {
+        padding: 35px 40px;
+        margin-top: 30px;
+        margin-bottom: 80px;
+        background-color: var(--item-bg-color);
+        border-radius: 4px;
+        box-shadow: var(--button-shadow);
+        color: var(--light-grey);
+        font-size: var(--p-text-size);
+      }
+
       .title {
-        margin: 0;
-        font-size: var(--h2-text-size);
-        letter-spacing: -0.04em;
-        padding-top: 2rem;
-        padding-bottom: 0;
-        text-align: center;
+        margin-bottom: 50px;
+        padding-top: 25px;
       }
 
       .description {
         margin-bottom: 4rem;
-        font-size: 1.4em;
         font-weight: 400;
         text-align: justify;
         text-transform: uppercase;
@@ -37,22 +44,16 @@ const { content } = Astro.props;
       .article {
         margin-top: 4rem;
         margin-bottom: 6rem;
-
+        line-height: 2;
+        
         :global(p) {
-          font-size: 1.3em;
-          line-height: 2;
           margin-top: 2em;
           margin-bottom: 2em;
         }
       }
 
-      .posts {
-        text-transform: uppercase;
-      }
-
       .footer {
-        margin-top: 6rem;
-        padding-bottom: 6rem;
+        margin-bottom: 6rem;
         text-align: center;
       }
     </style>
@@ -62,18 +63,17 @@ const { content } = Astro.props;
     <Nav />
 
     <main class="wrapper">
-      <h2 class="title">{content.title}</h2>
-      <p class="description">{content.description}</p>
-      <img class="img" src={content.image} alt="">
-      <article class="article">
-        <slot />
-      </article>
-      <footer class="footer">
-        <a class="posts" href="/blog">All Posts</a>
-      </footer>
+    <div class="blog-wrapper">
+        <!-- <h2 class="title">{content.title}</h2> -->
+        <BlogHead blog={content} />
+        <img class="img" src={content.image} alt="">
+        <article class="article">
+          <slot />
+        </article>
+        <footer class="footer">
+          <a class="posts" href="/blog">All Posts</a>
+        </footer>
+      </div>
     </main>
-
-    <footer>
-    </footer>
   </body>
 </html>

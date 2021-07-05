@@ -95,6 +95,16 @@ img {
   padding-right: 2rem;
 }
 
+.title {
+  margin: 0;
+  font-size: var(--h2-text-size);
+  letter-spacing: -0.04em;
+  padding-top: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+  color: var(--light-blue);
+}
+
 ::selection {
   color: black;
   background: var(--light-blue);

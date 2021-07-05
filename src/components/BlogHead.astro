@@ -1,0 +1,62 @@
+---
+import { formatReadingTime, getReadingTime } from '../utils/preview-helper';
+
+export interface Props {
+  blog: any;
+}
+const { blog } = Astro.props;
+
+function formatDate(date) {
+  return new Date(date).toUTCString().slice(5,16); // slice dd MMM yyyy
+}
+
+const readingTime = getReadingTime(blog.astro.source);
+---
+<style>
+    h2 {
+    font-size: var(--h2-text-size);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--light-blue);
+    }
+
+    .date {
+        font-size: var(--desc-text-size);
+        font-style: italic;
+        display: block;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5em;
+    }
+
+    .tag-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-color: var(--dark-green);
+        font-size: var(--desc-text-size);
+        padding: 5px 10px;
+        border-radius: 4px;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+    .read-summary {
+       font-size: var(--desc-text-size);
+    }
+
+</style>
+
+<h2>{blog.title}</h2>
+<div class="tag-wrapper">
+    {blog.tag.map(tag => <span class="tag">{tag}</span>)}
+</div>
+<span class="read-summary">{readingTime} min read {formatReadingTime(readingTime)}</span>
+<time class="date" datetime={blog.date}>{formatDate(blog.date)}</time>
+    
