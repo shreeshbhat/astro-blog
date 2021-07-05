@@ -11,4 +11,17 @@ export default {
     // port: 3000,         // The port to run the dev server on.
     // tailwindConfig: '', // Path to tailwind.config.js if used, e.g. './tailwind.config.js'
   },
+  markdownOptions: {
+    remarkPlugins: [
+      import('remark-slug'),
+      [import('remark-autolink-headings'), { behavior: 'prepend' }],
+      // import('remark-highlight.js')
+    ],
+    rehypePlugins: [
+      // Add a Rehype plugin that you want to enable for your project.
+      // If you need to provide options for the plugin, you can use an array and put the options as the second item.
+      // 'rehype-slug',
+      // ['rehype-autolink-headings', { behavior: 'prepend'}],
+    ]
+  }
 };

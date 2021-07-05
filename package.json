@@ -7,6 +7,11 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "0.15.1"
+    "astro": "0.16.1"
+  },
+  "dependencies": {
+    "remark-autolink-headings": "^6.0.1",
+    "remark-highlight.js": "^6.0.0",
+    "remark-slug": "^6.0.0"
   }
 }
