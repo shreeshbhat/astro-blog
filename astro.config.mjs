@@ -14,7 +14,7 @@ export default {
   markdownOptions: {
     remarkPlugins: [
       import('remark-slug'),
-      [import('remark-autolink-headings'), { behavior: 'prepend' }],
+      [import('remark-autolink-headings'), { behavior: 'wrap' }],
       // import('remark-highlight.js')
     ],
     rehypePlugins: [

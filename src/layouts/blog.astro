@@ -45,10 +45,14 @@ const { content } = Astro.props;
         margin-top: 4rem;
         margin-bottom: 6rem;
         line-height: 2;
-        
+
         :global(p) {
           margin-top: 2em;
           margin-bottom: 2em;
+        }
+
+        :global(h2,h3,h4) {
+          color: var(--light-blue);
         }
       }
 
@@ -64,7 +68,6 @@ const { content } = Astro.props;
 
     <main class="wrapper">
     <div class="blog-wrapper">
-        <!-- <h2 class="title">{content.title}</h2> -->
         <BlogHead blog={content} />
         <img class="img" src={content.image} alt="">
         <article class="article">
