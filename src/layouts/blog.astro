@@ -7,7 +7,7 @@ const { content } = Astro.props;
 
 ---
 
-<html>
+<html dir="ltr" lang="en">
   <head>
     <title>{content.title}</title>
     <MainHead title={content.title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
