@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/blog.astro
 title: Two months of tabletop gaming
-tag:
+tags:
   - Tabletop
   - Gaming
 date: 2019-08-25

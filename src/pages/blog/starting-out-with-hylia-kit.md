@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/blog.astro
 title: Starting out with Hylia kit
-tag:
+tags:
   - Blog
 date: 2019-08-15
 description: Starting my blog with a Hylia starter template.

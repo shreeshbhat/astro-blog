@@ -10,6 +10,14 @@ function formatDate(date) {
   return new Date(date).toUTCString().slice(5,16); // slice dd MMM yyyy
 }
 
+const tagsData = blog.tags.map((tag) => {
+    return {
+        tag,
+        url: `/tags/${tag}`,
+        label: `All posts tagged with ${tag}`
+    }
+})
+
 const readingTime = getReadingTime(blog.astro.source);
 ---
 <style>
@@ -40,11 +48,20 @@ const readingTime = getReadingTime(blog.astro.source);
         margin-right: 10px;
         margin-bottom: 10px;
         background-color: var(--dark-green);
+        border-bottom-color: transparent;
         font-size: var(--desc-text-size);
+        color: var(--light-grey);
         padding: 5px 10px;
         border-radius: 4px;
         white-space: nowrap;
         user-select: none;
+        letter-spacing: 0.02em;
+        font-weight: 400;
+    }
+
+    .tag:focus, .tag:hover {
+        background-color: var(--dark-green);
+        border-radius: 0;
     }
 
     .read-summary {
@@ -55,7 +72,7 @@ const readingTime = getReadingTime(blog.astro.source);
 
 <h2>{blog.title}</h2>
 <div class="tag-wrapper">
-    {blog.tag.map(tag => <span class="tag">{tag}</span>)}
+    {tagsData.map(({ tag, url,label }) => <a href={url} aria-label={label} class="tag">{tag}</a>)}
 </div>
 <span class="read-summary">{readingTime} min read {formatReadingTime(readingTime)}</span>
 <time class="date" datetime={blog.date}>{formatDate(blog.date)}</time>

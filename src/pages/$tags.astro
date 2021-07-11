@@ -1,0 +1,93 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import PostPreview from '../components/PostPreview.astro';
+import Pagination from '../components/Pagination.astro';
+import { unique } from '../utils/unique';
+
+// page
+let title = `Shreesh`;
+let description = 'An example blog on Astro';
+let canonicalURL = Astro.request.canonicalURL;
+
+const { collection } = Astro.props;
+
+export async function createCollection() {
+    
+    function title(tag) {
+        return `Posts tagged "${tag}"`;
+    }
+
+    function description(tag) {
+        return `All posts tagged with “${tag}”`;
+    }
+
+    const allPosts = Astro.fetchContent('./blog/*.md');
+    const allTags = unique(allPosts.map(({ tags }) => tags).flat());
+
+    return {
+        // `routes` defines the total collection of routes as data objects.
+        routes: allTags.map((tag) => {
+            const params = {
+                name: tag,
+                title: title(tag),
+                description: description(tag),
+            };
+            return params;
+        }),
+
+        // `permalink` defines the final URL for each route object defined in `routes`.
+        permalink: ({ params }) => `/tags/${params.name}`,
+
+        // `data` is now responsible for return the data for each page.
+        // Luckily we had already loaded all of the data at the top of the function,
+        // so we just filter the data here to group pages by first letter.
+        // If you needed to fetch more data for each page, you can do that here as well.
+        async data ({ params }) {
+            return allPosts.filter(p => p.tags.indexOf(params.name) >= 0);
+        },
+
+        // Finally, `pageSize` and `pagination` is still on by default. Because
+        // we don't want to paginate the already-grouped pages a second time, we'll
+        // disable pagination.
+        pageSize: 25,
+    }
+}
+---
+
+<html dir="ltr" lang="en">
+  <head>
+    <title>{title}</title>
+    <MainHead
+      title={title}
+      description={description}
+      image={collection.data[0].image}
+      canonicalURL={canonicalURL}
+      prev={collection.url.prev}
+      next={collection.url.next}
+    />
+
+    <style lang="scss">
+      .count {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+        color: var(--light-grey);
+      }
+    </style>
+  </head>
+
+  <body>
+    <Nav title={title} />
+
+    <main class="wrapper">
+      <h2 class="title">{collection.params.title}</h2>
+      <small class="count">{collection.start + 1} – {collection.end + 1} of {collection.total}</small>
+      {collection.data.map((blogpost) => <PostPreview blog={blogpost} />)}
+    </main>
+
+    <footer>
+      <Pagination prevUrl={collection.url.prev} nextUrl={collection.url.next} />
+    </footer>
+  </body>
+</html>
