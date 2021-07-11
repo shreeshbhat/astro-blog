@@ -3,8 +3,9 @@ import { formatReadingTime, getReadingTime } from '../utils/preview-helper';
 
 export interface Props {
   blog: any;
+  isHeaderLink: boolean;
 }
-const { blog } = Astro.props;
+const { blog, isHeaderLink } = Astro.props;
 
 function formatDate(date) {
   return new Date(date).toUTCString().slice(5,16); // slice dd MMM yyyy
@@ -25,7 +26,7 @@ const readingTime = getReadingTime(blog.astro.source);
     font-size: var(--h2-text-size);
     font-weight: 700;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     line-height: 1.6;
     color: var(--light-blue);
     }
@@ -46,7 +47,7 @@ const readingTime = getReadingTime(blog.astro.source);
 
     .tag {
         margin-right: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
         background-color: var(--dark-green);
         border-bottom-color: transparent;
         font-size: var(--desc-text-size);
@@ -68,12 +69,21 @@ const readingTime = getReadingTime(blog.astro.source);
        font-size: var(--desc-text-size);
     }
 
+    .read-emoji {
+        display: inline-block;
+        padding-left: 10px;
+    }
+
 </style>
 
-<h2>{blog.title}</h2>
+{
+    isHeaderLink
+    ? <h2><a class="link" href={blog.url}>{blog.title}</a></h2>
+    : <h2>{blog.title}</h2>
+}
 <div class="tag-wrapper">
     {tagsData.map(({ tag, url,label }) => <a href={url} aria-label={label} class="tag">{tag}</a>)}
 </div>
-<span class="read-summary">{readingTime} min read {formatReadingTime(readingTime)}</span>
+<span class="read-summary">{readingTime} min read</span> <div class="read-emoji" aria-hidden="true">{formatReadingTime(readingTime)}</div>
 <time class="date" datetime={blog.date}>{formatDate(blog.date)}</time>
     
