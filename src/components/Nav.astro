@@ -22,12 +22,12 @@ const { title } = Astro.props;
 .home-wrapper {
   @media (min-width: 600px) {
     display: flex;
-    align-items: baseline;
+    align-items: center;
   }
 }
 
 .emoji {
-  font-size: var(--h3-text-size);
+  font-size: var(--h1-text-size);
 }
 
 .title {
@@ -37,7 +37,8 @@ const { title } = Astro.props;
   color: var(--light-grey);
   margin-bottom: 0;
   @media (min-width: 600px) {
-    margin: 0 0.5em 30px 1em;
+    margin: 0 2rem;
+    padding: 0;
     font-size: clamp(2rem, 3vw, 3rem);
   }
 
