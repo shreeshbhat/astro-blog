@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/blog.astro
 title: Avoid using undocumented APIs
-tag:
+tags:
   - Today I learned
 date: 2020-05-14
 description: A small observation during pull request review. 

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/blog.astro
 title: Using Eleventy
-tag:
+tags:
   - Blog
 date: 2020-05-19
 description: Updating my blog to use Eleventy instead of Hylia starter.
