@@ -6,7 +6,7 @@ import Pagination from '../components/Pagination.astro';
 
 // page
 let title = `Shreesh`;
-let description = 'An example blog on Astro';
+let description = `Shreesh Bhat's blog`;
 
 // collection
 // note: we want to show first 3 blog posts here, but we don’t want to paginate at /1, /2, /3, etc.
@@ -16,6 +16,32 @@ let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 3);
 ---
+
+<style>
+  h2 {
+    font-size: var(--h2-text-size);
+    font-weight: 700;
+    margin-top: 90px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--light-blue);
+  }
+  .intro {
+    font-size: var(--h1-text-size);
+    color: var(--light-grey);
+  }
+  p {
+    color: var(--light-grey);
+    font-size: var(--p-text-size);
+    line-height: 2;
+  }
+  strong {
+    color: var(--light-blue-contrast);
+  }
+  .latest-heading {
+    margin-bottom: 25px;
+  }
+</style>
 
 <html dir="ltr" lang="en">
   <head>
@@ -32,6 +58,10 @@ let firstPage = allPosts.slice(0, 3);
     <Nav />
 
     <main class="wrapper">
+      <h2 class="intro">Hiya, I'm Shreesh Bhat (they/their).</h2>
+      <p>I am a <strong>Software Engineer</strong> in <strong>Atlanta</strong>. I enjoy working on the <strong>front-end</strong> of the web.</p>
+      <p>You can check out my <a href="https://github.com/shreeshbhat">GitHub</a> or reach out to me on <a href="https://www.twitter.com/shreeshbhat">Twitter</a>.</p>
+      <h2 class="latest-heading">Latest 3 posts</h2>
       {firstPage.map((blogpost) => <PostPreview blog={blogpost} />)}
     </main>
 

@@ -17,16 +17,19 @@ const readingTime = getReadingTime(blog.astro.source);
 <style lang="scss">
 .blog-post-wrapper {
   margin: 0 auto;
-  max-width: min(60ch + 15vw, 830px);
 }
 
 .blog-post {
   color: var(--light-grey);
   padding: 35px 40px;
-  margin-top: 55px;
+  margin-bottom: 55px;
   background-color: var(--item-bg-color);
   border-radius: 4px;
   box-shadow: var(--button-shadow);
+}
+
+.blog-post-wrapper:last-child .blog-post:last-child {
+  margin-bottom: 0;
 }
 
 .link, .description {

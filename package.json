@@ -1,13 +1,13 @@
 {
   "name": "@shreeshbhat/astro-blog",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "astro dev --verbose",
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "0.17.1"
+    "astro": "0.17.2"
   },
   "dependencies": {
     "remark-autolink-headings": "^6.0.1",
