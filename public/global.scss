@@ -7,6 +7,7 @@
   --grey-blue: #73849a;
   --light-grey: #e0e0e0;
   --light-blue: #8bb8df;
+  --light-blue-contrast: #b6dcfb;
   --dark-blue: #2b2f33;
   --dark-pink: #99003b;
   --dark-green: #2d494e;
@@ -88,7 +89,8 @@ img {
 }
 
 .wrapper {
-  max-width: 60rem;
+  // max-width: 60rem;
+  max-width: min(60ch + 15vw, 830px);
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
