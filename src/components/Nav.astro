@@ -1,6 +1,5 @@
 ---
-import { getRandomEmoji } from '../utils/emoji';
-
+import NavEmoji from './NavEmoji.svelte';
 export interface Props {
   title: string;
 }
@@ -24,10 +23,6 @@ const { title } = Astro.props;
     display: flex;
     align-items: center;
   }
-}
-
-.emoji {
-  font-size: var(--h1-text-size);
 }
 
 .title {
@@ -76,7 +71,7 @@ a {
 <nav class="header">
   <div class="home-wrapper">
     <h1 class="title">Shreesh</h1>
-    <span aria-hidden="true" class="emoji">{getRandomEmoji()}</span>
+    <NavEmoji client:load />
   </div>
   <ul class="nav">
     <li><a href="/">Home</a></li>
