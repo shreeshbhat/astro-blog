@@ -9,7 +9,10 @@ onMount(() => {
 </script>
 <style lang="scss">
     .emoji {
+        display: block;
         font-size: var(--h1-text-size);
+        min-height: 31px;
+        min-width: 31px;
     }
 </style>
 
