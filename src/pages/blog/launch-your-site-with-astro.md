@@ -5,7 +5,7 @@ tags:
   - Blog
 date: 2021-07-20
 description: Taking a look into Astro, a modern static site generator.
-image: /images/launch-your-site-with-astro.jpg
+image: /images/blog/launch-your-site-with-astro.jpg
 ---
 I started playing around with [Astro](https://docs.astro.build/) for the past couple of weeks for this website. Astro is a modern static site generator that outputs zero client-side JavaScript by default and puts HTML/CSS front & center. If needed, you can still sprinkle in interactivity by bringing in your own framework components. It supports React, Preact, Vue, and Svelte components so far in its beta release.
 
