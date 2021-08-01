@@ -4,7 +4,8 @@ title: Avoid using undocumented APIs
 tags:
   - Today I learned
 date: 2020-05-14
-description: A small observation during pull request review. 
+description: A small observation during pull request review.
+image: /images/blog/avoid-using-undocumented-apis.jpg 
 ---
 I learn a lot through reviewing other's pull requests. Maybe I notice a new way of doing something or learn something through review comments.
 

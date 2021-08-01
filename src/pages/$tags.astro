@@ -10,8 +10,6 @@ let title = `Shreesh`;
 let description = 'Some words written by Shreesh Bhat about dev, art, and more';
 let canonicalURL = Astro.request.canonicalURL;
 
-const { collection } = Astro.props;
-
 export async function createCollection() {
     
     function title(tag) {
@@ -26,33 +24,28 @@ export async function createCollection() {
     const allTags = unique(allPosts.map(({ tags }) => tags).flat());
 
     return {
-        // `routes` defines the total collection of routes as data objects.
-        routes: allTags.map((tag) => {
-            const params = {
-                name: tag,
-                title: title(tag),
-                description: description(tag),
-            };
-            return params;
-        }),
-
-        // `permalink` defines the final URL for each route object defined in `routes`.
-        permalink: ({ params }) => `/tags/${params.name}`,
-
-        // `data` is now responsible for return the data for each page.
-        // Luckily we had already loaded all of the data at the top of the function,
-        // so we just filter the data here to group pages by first letter.
-        // If you needed to fetch more data for each page, you can do that here as well.
-        async data ({ params }) {
-            return allPosts.filter(p => p.tags.indexOf(params.name) >= 0);
+        // Set "paginate" to true to enable pagination.
+        paginate: true,
+        // `route` defines the URL structure for your collection.
+        route: '/tags/:tag/:page?',
+        // `paths` tells Astro which pages to generate in your collection.
+        paths() {
+          return allTags.map(tag => ({params: {tag}}))
         },
-
-        // Finally, `pageSize` and `pagination` is still on by default. Because
-        // we don't want to paginate the already-grouped pages a second time, we'll
-        // disable pagination.
-        pageSize: 25,
+        // `props` returns the data needed on each page.
+        async props({ params, paginate }) {
+          const {tag} = params;
+          const filteredPosts = allPosts.filter(p => p.tags.indexOf(tag) >= 0);
+          return {
+            tagTitle: title(tag),
+            tagDescription: description(tag),
+            posts: paginate(filteredPosts, { pageSize: 25 })
+          }
+        }
     }
 }
+
+const { tagTitle, tagDescription, posts } = Astro.props;
 ---
 
 <html dir="ltr" lang="en">
@@ -61,10 +54,10 @@ export async function createCollection() {
     <MainHead
       title={title}
       description={description}
-      image={collection.data[0].image}
+      
       canonicalURL={canonicalURL}
-      prev={collection.url.prev}
-      next={collection.url.next}
+      prev={posts.url.prev}
+      next={posts.url.next}
     />
 
     <style lang="scss">
@@ -82,13 +75,13 @@ export async function createCollection() {
     <Nav title={title} />
 
     <main class="wrapper">
-      <h2 class="title">{collection.params.title}</h2>
-      <small class="count">{collection.start + 1} – {collection.end + 1} of {collection.total}</small>
-      {collection.data.map((blogpost) => <PostPreview blog={blogpost} />)}
+      <h2 class="title">{tagTitle}</h2>
+      <small class="count">{posts.start + 1} – {posts.end + 1} of {posts.total}</small>
+      {posts.data.map((blogPost) => <PostPreview blog={blogPost} />)}
     </main>
 
     <footer>
-      <Pagination prevUrl={collection.url.prev} nextUrl={collection.url.next} />
+      <Pagination prevUrl={posts.url.prev} nextUrl={posts.url.next} />
     </footer>
   </body>
 </html>

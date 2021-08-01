@@ -8,10 +8,6 @@ import Pagination from '../components/Pagination.astro';
 let title = `Shreesh`;
 let description = `Some words written by Shreesh Bhat about dev, art, and more`;
 
-// collection
-// note: we want to show first 3 blog posts here, but we don’t want to paginate at /1, /2, /3, etc.
-// so we show a preview of blog posts here, but actually paginate from $blog.astro
-
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 3);
