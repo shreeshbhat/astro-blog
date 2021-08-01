@@ -39,16 +39,11 @@ const readingTime = getReadingTime(blog.astro.source);
 p {
   margin: 15px 0;
 }
-
-
-
-
 </style>
 
 <article class="blog-post-wrapper">
   <div class="blog-post">
     <BlogHead blog={blog} isHeaderLink={true} />
-    
     <p class="description">{blog.description}</p>
   </div>
 </article>

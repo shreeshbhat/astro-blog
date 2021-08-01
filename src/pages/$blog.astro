@@ -9,18 +9,18 @@ let title = `Shreesh`;
 let description = 'Some words written by Shreesh Bhat about dev, art, and more';
 let canonicalURL = Astro.request.canonicalURL;
 
-// collection
-let { collection } = Astro.props;
 export async function createCollection() {
   return {
+    route: `/blog/:page?`,
+    paginate: true,
     /** Load blog posts, sort newest -> oldest */
-    async data() {
-      let allPosts = Astro.fetchContent('./blog/*.md');
-      allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      return allPosts;
+    async props({paginate}) {
+      const allPosts = Astro.fetchContent('./blog/*.md');
+      const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      return {
+        posts: paginate(sortedPosts, {pageSize: 3}),
+      }
     },
-    /** Set page size */
-    pageSize: 3,
     /** Generate RSS feed (only for main /blog/ feed) */
     rss: {
       title: `Shreesh`,
@@ -35,6 +35,7 @@ export async function createCollection() {
     }
   };
 }
+const { posts } = Astro.props;
 ---
 
 <html dir="ltr" lang="en">
@@ -43,10 +44,10 @@ export async function createCollection() {
     <MainHead
       title={title}
       description={description}
-      image={collection.data[0].image}
+      image={posts.data[0].image}
       canonicalURL={canonicalURL}
-      prev={collection.url.prev}
-      next={collection.url.next}
+      prev={posts.url.prev}
+      next={posts.url.next}
     />
 
     <style lang="scss">
@@ -65,12 +66,12 @@ export async function createCollection() {
 
     <main class="wrapper">
       <h2 class="title">All Posts</h2>
-      <small class="count">{collection.start + 1} – {collection.end + 1} of {collection.total}</small>
-      {collection.data.map((blogpost) => <PostPreview blog={blogpost} />)}
+      <small class="count">{posts.start + 1} – {posts.end + 1} of {posts.total}</small>
+      {posts.data.map((blogpost) => <PostPreview blog={blogpost} />)}
     </main>
 
     <footer>
-      <Pagination prevUrl={collection.url.prev} nextUrl={collection.url.next} />
+      <Pagination prevUrl={posts.url.prev} nextUrl={posts.url.next} />
     </footer>
   </body>
 </html>
