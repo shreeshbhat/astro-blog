@@ -6,7 +6,7 @@ import Pagination from '../components/Pagination.astro';
 
 // page
 let title = `Shreesh`;
-let description = 'Some words written by Shreesh Bhat about dev, art, and more';
+let description = 'Some words written by Shreesh Bhat about dev, gaming, and more';
 let canonicalURL = Astro.request.canonicalURL;
 
 export async function createCollection() {
@@ -24,7 +24,7 @@ export async function createCollection() {
     /** Generate RSS feed (only for main /blog/ feed) */
     rss: {
       title: `Shreesh`,
-      description: 'Some words written by Shreesh Bhat about dev, art, and more.',
+      description: 'Some words written by Shreesh Bhat about dev, gaming, and more.',
       customData: `<language>en-us</language>`,
       item: (item) => ({
         title: item.title,
