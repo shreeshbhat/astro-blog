@@ -7,6 +7,7 @@ import Pagination from '../components/Pagination.astro';
 // page
 let title = `Shreesh`;
 let description = `Some words written by Shreesh Bhat about dev, gaming, and more`;
+let ogImage = '/images/og_img.jpg';
 
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -45,7 +46,7 @@ let firstPage = allPosts.slice(0, 3);
     <MainHead
       title={title}
       description={description}
-      image={firstPage[0].image}
+      image={ogImage}
       canonicalURL={Astro.request.canonicalURL.href}
     />
   </head>
