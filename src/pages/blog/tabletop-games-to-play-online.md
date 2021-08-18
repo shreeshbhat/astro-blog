@@ -3,9 +3,9 @@ layout: ../../layouts/blog.astro
 title: Tabletop games to play online
 tags:
   - Gaming
-date: 2021-08-02
+date: 2021-08-18
 description: Tabletop Games you can play with your family or friends online
-image: /images/blog/avoid-using-undocumented-apis.jpg 
+image: /images/og_img.jpg
 ---
 Here's a list of games you can play with your family or friends online via a group call.
 

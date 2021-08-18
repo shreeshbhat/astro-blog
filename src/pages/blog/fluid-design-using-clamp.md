@@ -6,6 +6,7 @@ tags:
   - CSS
 date: 2020-05-20
 description: Font size fluidity based on browser size and user preference is exciting.
+image: /images/og_img.jpg
 ---
 I came across css clamp function today while browsing [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
 ``` css
