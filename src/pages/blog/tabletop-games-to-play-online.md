@@ -13,19 +13,20 @@ Here's a list of games you can play with your family or friends online via a gro
 
 - [Codenames](https://codenames.game/) : A fun word game for 4+ players.
 - [Skribble.io](https://skribbl.io/) : Drawing and guessing game.
-- [One night ultimate werewolf](https://netgames.io/games/onu-werewolf/): A party game for large group of people with hidden roles.
-- [Spyfall](https://www.spyfall.app/) : Another party game with a hidden role.
+- [Spyfall](https://www.spyfall.app/) : A party game for large group of people with a hidden role.
 
-### Tabletop simulator games
-Tabletop simulator is a physics sandbox where you can play thousands of community created mods. It often is available for $10 during steam sales. You can buy the simulator and play the mods for free. Here's a list of some of my favorite community mods :
+### Playingcards.io games
+You can easily import a pcio file into [playingcards.io](https://www.playingcards.io) and play a card game remotely.
 
-- [Sequence](https://steamcommunity.com/sharedfiles/filedetails/?id=849115029&searchtext=sequence) : Great for 2-6 players. Good intro game for tabletop simulator because you learn the controls of shuffling cards, placing tokens, zooming & panning the camera, and finally flipping the table in rage.
-- [Skull](https://steamcommunity.com/sharedfiles/filedetails/?id=370123188): Easy to play bluffing game for 4+ players.
-- [Love letter](https://steamcommunity.com/sharedfiles/filedetails/?id=412185866): Quick to play card guessing game.
-- [Marvel Infinity Gauntlet](https://steamcommunity.com/sharedfiles/filedetails/?id=2202666213): It is a themed version of Love letter. In my opinion, better than love letter because it is asymmetrical (Thanos vs heroes).
-- [Sheriff of Nottingham](https://steamcommunity.com/sharedfiles/filedetails/?id=598154455): My favorite bluffing game! Best at 4 players.
-- [Flamme Rouge](https://steamcommunity.com/sharedfiles/filedetails/?id=2146266002):  Tactical bicycle racing game.
-- [Biblios](https://steamcommunity.com/sharedfiles/filedetails/?id=1119442805): Current favorite game! It involves a good deal of strategy, a little luck, and some bluffing. Best at 3 to 4 players.
-- [Dixit](https://steamcommunity.com/sharedfiles/filedetails/?id=2177479474): Storytelling with targeted clues. Good party game for 5 to 6 players.
-- [Carcassonne](https://steamcommunity.com/sharedfiles/filedetails/?id=263788054): Best entry level tile-placement game. 
-- [Concept](https://steamcommunity.com/sharedfiles/filedetails/?id=935838925): Word guessing game using icons.
+- [6 nimmit!](https://boardgamegeek.com/geeklist/272690/games-implemented-playingcardsio?itemid=8665647) : Choose sequential cards for rows simultaneously, but avoid adding the 6th card! Party game for 5-6 people.
+- [Schadenfreude](https://github.com/shreeshbhat/schadenfreude) : Taking tricks, but watch what is played - avoid the values already collected. Trick taking game with interesting twists for 3-5 people.
+- [Somnia](https://github.com/shreeshbhat/Somnia-3p) : Trick-taker for 3 about collecting dreams and escaping nightmares.
+- [Dokitto Ice](https://github.com/shreeshbhat/Dokitto-Ice) : A trick-taking game in which high values but also low values are strong. You are a member of a famous group of really big eaters (called oogui in Japan). This time, to show your skills, you decide to pay a visit to a famous Ice cream shop. The first bite is incredible! Your taste buds are going crazy! Your friends and you just want to have more, more, more BUT the shop owner has one rule: never order more than 3 scoops of ice cream or your order is cancelled!
+- [Mismatch](https://github.com/shreeshbhat/mismatch) : Card game for 4 where the object is to avoid making combinations.
+- [12 Chip trick](https://github.com/shreeshbhat/12-chip-trick) : Trick taker for 3. With just 12 cards-- err, chips, try to win the most points. Well, maybe just 20
+- [Collusion](https://github.com/shreeshbhat/collusion) : Trick taker for 4 where players try to win the same numbers of tricks. The key twist is that table talk is encouraged.
+- [nana](https://github.com/shreeshbhat/nana) : Set collection game for 3-5 players, where can you find another card with that number? My hand? Their hand? Which end? 
+
+I highly recommend going through this huge list of 400+ games to find what you like. [List of games](https://boardgamegeek.com/geeklist/272690/games-implemented-playingcardsio).
+
+EDIT: Last updated 24 Sep 2022
