@@ -54,7 +54,7 @@ html, body {
 }
 
 html {
-  background-image: linear-gradient(345deg, #0f1124 0%, #212545 13%, #313981 25%, #734785 60%, #48305a 90%, #291738 100%);
+  background-image: linear-gradient(0deg, #22274e 0%, #7a4db3 30%, #482c5d 90%, #2b1c36 100%);
 }
 
 p {
@@ -89,7 +89,7 @@ img {
 
 .wrapper {
   // max-width: 60rem;
-  max-width: min(60ch + 15vw, 830px);
+  max-width: min(75ch + 20vw,890px);
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
